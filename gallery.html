@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Spring Grove B&B</title>
+    <meta name="description" content="Explore photos of Spring Grove B&B rooms, property, food, and surroundings in Jowai, Meghalaya.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+           <a href="#" class="logo">
+                <img src="logo.jpeg" alt="Spring Grove B&B" class="logo-img">
+                <span>Spring Grove B&B</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#rooms" class="nav-link">Rooms</a></li>
+                <li><a href="index.html#amenities" class="nav-link">Amenities</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="index.html#location" class="nav-link">Location</a></li>
+                <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#pricing" class="btn btn-primary nav-cta">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <span class="section-tag">Visual Tour</span>
+            <h1 class="gallery-title">Our Photo Gallery</h1>
+            <p class="gallery-subtitle">Take a look around Spring Grove B&B — from our cozy rooms to the beautiful surroundings of Meghalaya</p>
+            
+            <!-- Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> All Photos
+                </button>
+                <button class="filter-btn" data-filter="rooms">
+                    <i class="fas fa-bed"></i> Rooms
+                </button>
+                <button class="filter-btn" data-filter="property">
+                    <i class="fas fa-home"></i> Property
+                </button>
+                <button class="filter-btn" data-filter="food">
+                    <i class="fas fa-utensils"></i> Food
+                </button>
+                <button class="filter-btn" data-filter="surroundings">
+                    <i class="fas fa-mountain"></i> Surroundings
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <!-- Rooms -->
+                <div class="gallery-item" data-category="rooms">
+                    <div class="gallery-placeholder room-img">
+                        <i class="fas fa-bed"></i>
+                        <span>Deluxe Room</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Deluxe Room</h3>
+                        <p>Spacious with attached kitchen</p>
+                        <button class="view-btn" onclick="openLightbox(0)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="rooms">
+                    <div class="gallery-placeholder room-img-2">
+                        <i class="fas fa-bed"></i>
+                        <span>Standard Room</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Standard Room</h3>
+                        <p>Clean and comfortable</p>
+                        <button class="view-btn" onclick="openLightbox(1)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="rooms">
+                    <div class="gallery-placeholder room-img-3">
+                        <i class="fas fa-bed"></i>
+                        <span>Family Suite</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Family Suite</h3>
+                        <p>Extra spacious with living area</p>
+                        <button class="view-btn" onclick="openLightbox(2)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="rooms">
+                    <div class="gallery-placeholder room-img-4">
+                        <i class="fas fa-bath"></i>
+                        <span>Bathroom</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Private Bathroom</h3>
+                        <p>Modern and clean</p>
+                        <button class="view-btn" onclick="openLightbox(3)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property -->
+                <div class="gallery-item" data-category="property">
+                    <div class="gallery-placeholder property-img">
+                        <i class="fas fa-home"></i>
+                        <span>Exterior View</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Property Exterior</h3>
+                        <p>Peaceful green surroundings</p>
+                        <button class="view-btn" onclick="openLightbox(4)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="property">
+                    <div class="gallery-placeholder property-img-2">
+                        <i class="fas fa-couch"></i>
+                        <span>Common Area</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Common Area</h3>
+                        <p>Cozy sitting space</p>
+                        <button class="view-btn" onclick="openLightbox(5)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="property">
+                    <div class="gallery-placeholder property-img-3">
+                        <i class="fas fa-car"></i>
+                        <span>Parking Area</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Free Parking</h3>
+                        <p>Secure parking for guests</p>
+                        <button class="view-btn" onclick="openLightbox(6)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="property">
+                    <div class="gallery-placeholder property-img-4">
+                        <i class="fas fa-spa"></i>
+                        <span>Spa Area</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Spa & Massage</h3>
+                        <p>Relax and rejuvenate</p>
+                        <button class="view-btn" onclick="openLightbox(7)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food -->
+                <div class="gallery-item" data-category="food">
+                    <div class="gallery-placeholder food-img">
+                        <i class="fas fa-utensils"></i>
+                        <span>Breakfast</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Fresh Breakfast</h3>
+                        <p>Delicious homemade meals</p>
+                        <button class="view-btn" onclick="openLightbox(8)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="food">
+                    <div class="gallery-placeholder food-img-2">
+                        <i class="fas fa-coffee"></i>
+                        <span>Local Cuisine</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Local Cuisine</h3>
+                        <p>Authentic Meghalaya flavors</p>
+                        <button class="view-btn" onclick="openLightbox(9)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="food">
+                    <div class="gallery-placeholder food-img-3">
+                        <i class="fas fa-blender"></i>
+                        <span>Kitchen</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>In-Room Kitchen</h3>
+                        <p>Cook your own meals</p>
+                        <button class="view-btn" onclick="openLightbox(10)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Surroundings -->
+                <div class="gallery-item" data-category="surroundings">
+                    <div class="gallery-placeholder surround-img">
+                        <i class="fas fa-mountain"></i>
+                        <span>Mountain View</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Mountain View</h3>
+                        <p>Breathtaking scenery nearby</p>
+                        <button class="view-btn" onclick="openLightbox(11)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="surroundings">
+                    <div class="gallery-placeholder surround-img-2">
+                        <i class="fas fa-tree"></i>
+                        <span>Green Hills</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Green Hills</h3>
+                        <p>Lush landscapes of Meghalaya</p>
+                        <button class="view-btn" onclick="openLightbox(12)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="surroundings">
+                    <div class="gallery-placeholder surround-img-3">
+                        <i class="fas fa-water"></i>
+                        <span>Nearby Waterfall</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Nearby Waterfall</h3>
+                        <p>Explore natural wonders</p>
+                        <button class="view-btn" onclick="openLightbox(13)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="surroundings">
+                    <div class="gallery-placeholder surround-img-4">
+                        <i class="fas fa-sun"></i>
+                        <span>Sunset View</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Sunset View</h3>
+                        <p>Peaceful evenings</p>
+                        <button class="view-btn" onclick="openLightbox(14)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Experience It Yourself?</h2>
+                <p>Book your stay now and enjoy the peaceful comfort of Spring Grove B&B</p>
+                <div class="cta-buttons">
+                    <a href="index.html#pricing" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                    <a href="https://wa.me/918413966410?text=Hi%20Spring%20Grove%20B%26B%2C%20I%20saw%20your%20gallery%20and%20want%20to%20book" class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>Spring Grove B&B</span>
+                    </a>
+                    <p>Affordable comfort with premium experience in the peaceful hills of Meghalaya.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#rooms">Rooms</a></li>
+                        <li><a href="index.html#amenities">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:08413966410">084139 66410</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Loomsooing Newhill, Jowai, Meghalaya</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@springgrovebb.com">info@springgrovebb.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Spring Grove B&B. All rights reserved.</p>
+                <p class="footer-rating"><i class="fas fa-star"></i> 4.9 Rating | 190+ Reviews</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918413966410?text=Hi%20Spring%20Grove%20B%26B%2C%20I'm%20interested%20in%20booking" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" onclick="changeImage(-1)" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" onclick="changeImage(1)" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <div class="lightbox-image" id="lightboxImage"></div>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
+
